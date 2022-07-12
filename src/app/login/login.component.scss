@@ -1,10 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
 //login form
 .example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
 .example-full-width {
   width: 100%;
 }
@@ -42,3 +50,5 @@ section {
   justify-content: center;
   width: 120px;
 }
+
+//navbar

@@ -9,15 +9,26 @@ import { LoginComponent } from './login/login.component';
 //login form
 import {MatInputModule} from '@angular/material/input';
 
-//button
+//login button
 import {MatButtonModule} from '@angular/material/button';
+
+//navbar page
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+
+//navbar
+import {MatToolbarModule} from '@angular/material/toolbar';
+
+import {MatIconModule} from '@angular/material/icon';
+import { ProductComponent } from './product/product.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    NavBarComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -25,8 +36,9 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
 
     MatInputModule, //login form
-    MatButtonModule //login button
-    
+    MatButtonModule, //login button
+    MatToolbarModule, //navbar
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
