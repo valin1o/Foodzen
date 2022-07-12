@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 
 //login form
 import {MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule} from '@angular/material/form-field';
 
 //login button
 import {MatButtonModule} from '@angular/material/button';
@@ -34,6 +35,7 @@ import { ProductComponent } from './product/product.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatFormFieldModule,
 
     MatInputModule, //login form
     MatButtonModule, //login button
