@@ -1,12 +1,16 @@
 <div class="container">
   <form class="example-form">
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Email</mat-label>
-      <input matInput placeholder="Ex: test@gmail.com">
+      <mat-label>E-Mail</mat-label>
+      <input matInput type="email" placeholder="Ex: test@gmail.com">
     </mat-form-field>
+  </form>
+    
+  <form class="example-form">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Password</mat-label>
-      <input matInput>
+      <input matInput #message maxlength="15">
+      <mat-hint align="end">{{message.value.length}} / 15</mat-hint>
     </mat-form-field>
   </form>
 
