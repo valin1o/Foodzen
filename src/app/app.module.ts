@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 //login form
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 //login button
 import { MatButtonModule } from '@angular/material/button';
@@ -36,7 +37,8 @@ import { ProductComponent } from './product/product.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule, //login form - formField
-
+    FormsModule,
+    ReactiveFormsModule,
     MatInputModule, //login form - input
     MatButtonModule, //login button
     MatToolbarModule, //navbar

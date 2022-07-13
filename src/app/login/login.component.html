@@ -1,16 +1,18 @@
 <div class="container">
+
   <mat-form-field appearance="fill">
-    <mat-label>Enter your email</mat-label>
-    <input matInput placeholder="pat@example.com" [formControl]="email" required>
+    <mat-label>Email</mat-label>
+    <input type="email" matInput placeholder="test@example.com" [formControl]="email" required>
     <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-    <mat-label>Enter your password</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'">
+    <mat-label>Password</mat-label> 
+    <input required type="password" minlength="15" matInput [type]="hide ? 'password' : 'text'">
     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </button>
+    <mat-hint align="start"><strong>Minimum password length: 15</strong> </mat-hint>
   </mat-form-field>
 
   <button mat-raised-button>LOG IN</button>
