@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ export class LoginComponent implements OnInit {
   UserInputPassword: string = '';
   UserInputEmail: string = '';
 
-  constructor() {}
+  constructor(private route: Router) {}
 
   ngOnInit(): void {}
 
@@ -31,8 +32,10 @@ export class LoginComponent implements OnInit {
       this.UserInputEmail === 'test@test.com' &&
       this.UserInputPassword === 'asdfghjklpqwert'
     ) {
-      alert('Logged in');
+      // alert('Logged in');
+      this.route.navigateByUrl('home');
     } else {
+      this.route.navigateByUrl('home'); 
       alert('Wrong log-in credentials');
     }
   }
