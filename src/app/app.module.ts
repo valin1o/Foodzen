@@ -22,6 +22,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { MatIconModule } from '@angular/material/icon';
 import { ProductComponent } from './product/product.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { ProductComponent } from './product/product.component';
     MatButtonModule, //login button
     MatToolbarModule, //navbar
     MatIconModule, //icons
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
