@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       // alert('Logged in');
       this.route.navigateByUrl('home');
     } else {
-      this.route.navigateByUrl('home'); 
+      this.route.navigateByUrl('home');
       alert('Wrong log-in credentials');
     }
   }
