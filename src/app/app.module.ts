@@ -9,7 +9,7 @@ import { LoginComponent } from './login/login.component';
 //login form
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //login button
 import { MatButtonModule } from '@angular/material/button';
@@ -22,29 +22,29 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { MatIconModule } from '@angular/material/icon';
 import { ProductComponent } from './product/product.component';
-
-
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NavBarComponent,
-    ProductComponent
+    ProductComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule, //login form - formField
-    FormsModule,
-    ReactiveFormsModule,
+    FormsModule, //login form - forms/home page
+    ReactiveFormsModule, //login form
     MatInputModule, //login form - input
     MatButtonModule, //login button
     MatToolbarModule, //navbar
-    MatIconModule //icons
+    MatIconModule, //icons
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

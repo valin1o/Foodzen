@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms'
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  UserInputPassword: string = '';
+  UserInputEmail: string = '';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   hide = true;
 
@@ -19,11 +20,20 @@ export class LoginComponent implements OnInit {
 
   getErrorMessage() {
     if (this.email.hasError('required')) {
-      return 'You must enter a value';
+      return 'You must enter a valid E-Mail';
     }
 
-    return this.email.hasError('email') ? 'Not a valid email' : '';
+    return this.email.hasError('email') ? 'Not a valid E-Mail' : '';
   }
-  
 
+  onLogin() {
+    if (
+      this.UserInputEmail === 'test@test.com' &&
+      this.UserInputPassword === 'asdfghjklpqwert'
+    ) {
+      alert('Logged in');
+    } else {
+      alert('Wrong log-in credentials');
+    }
+  }
 }

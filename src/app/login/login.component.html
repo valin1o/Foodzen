@@ -2,20 +2,44 @@
   <p>
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>E-Mail</mat-label>
-      <input type="email" matInput placeholder="test@example.com" [formControl]="email" required>
-      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      <input
+        type="email"
+        matInput
+        placeholder="test@example.com"
+        [formControl]="email"
+        required
+        [(ngModel)]="UserInputEmail"
+      />
+      <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
     </mat-form-field>
   </p>
 
   <p>
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Password</mat-label> 
-      <input required type="password" pattern=".{15,}" ngModel minlength="15" matInput [type]="hide ? 'password' : 'text'">
-      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      <mat-label>Password</mat-label>
+      <input
+        required
+        type="password"
+        pattern=".{15,}"
+        ngModel
+        minlength="15"
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        [(ngModel)]="UserInputPassword"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
       </button>
-      <mat-hint align="start"><strong>Minimum password length: 15</strong> </mat-hint>
+      <mat-hint align="start"
+        ><strong>Minimum password length: 15</strong>
+      </mat-hint>
     </mat-form-field>
   </p>
-  <button mat-raised-button>LOG IN</button>
+  <button mat-raised-button (click)="onLogin()">LOG IN</button>
 </div>
