@@ -6,59 +6,43 @@
   align-items: center;
 }
 
-//login form
-.example-container .mat-form-field + .mat-form-field {
-  margin-left: 8px;
-}
-
-.example-container .mat-form-field + .mat-form-field {
-  margin-left: 8px;
-}
-
-.example-right-align {
-  text-align: right;
-}
-
-input.example-right-align::-webkit-outer-spin-button,
-input.example-right-align::-webkit-inner-spin-button {
-  display: none;
-}
-
-input.example-right-align {
-  -moz-appearance: textfield;
-}
-
-//login button
-section {
-  display: table;
-}
-
-.example-label {
-  display: table-cell;
-  font-size: 14px;
-  margin-left: 8px;
-  min-width: 120px;
-}
-
-.example-button-row {
-  display: table-cell;
-  width: 490px;
-}
-
 .example-button-row .mat-button-base {
   margin: 8px 8px 8px 0;
 }
 
-.example-flex-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
 }
 
-.example-button-container {
+.example-full-width-email {
+  width: 300px;
+}
+
+.example-full-width-password {
+  width: 300px;
+}
+
+.login-button-container{
+  padding-top: 20px;
+  align-items: center;
   display: flex;
   justify-content: center;
-  width: 120px;
 }
 
-//navbar
+.login-button{
+  background-color: #3f51b5;
+  color: #fff;
+  width: 100px;
+}
+
+.login-button:hover{
+  background-color: #fff;
+  color:#3f51b5;
+}
+
+.login-card{
+  border: 300px;
+  border-color: #3f51b5;;
+}

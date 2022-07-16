@@ -29,13 +29,13 @@ export class LoginComponent implements OnInit {
 
   onLogin() {
     if (
-      this.UserInputEmail === 'admin@admin.com' &&
+      this.UserInputEmail === 'admin' &&
       this.UserInputPassword === '1234'
     ) {
       // alert('Logged in');
       this.route.navigateByUrl('home');
     } else {
-      this.route.navigateByUrl('home');
+      this.route.navigateByUrl('login');
       alert('Wrong log-in credentials');
     }
   }
