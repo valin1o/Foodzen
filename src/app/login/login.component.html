@@ -1,5 +1,6 @@
-<div class="container">
-  <mat-card class="login-card">
+<div class="login-background">
+  <div class="container">
+    <mat-card class="login-card">
       <p>
         <mat-form-field class="example-full-width-email" appearance="fill">
           <mat-label>E-Mail</mat-label>
@@ -11,7 +12,11 @@
             required
             [(ngModel)]="UserInputEmail"
           />
-          <span matPrefix><mat-icon aria-hidden="false" aria-label="Example home icon">mail</mat-icon></span>
+          <span matPrefix
+            ><mat-icon aria-hidden="false" aria-label="Example home icon"
+              >mail</mat-icon
+            ></span
+          >
           <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
         </mat-form-field>
       </p>
@@ -29,7 +34,11 @@
             [type]="hide ? 'password' : 'text'"
             [(ngModel)]="UserInputPassword"
           />
-          <span matPrefix><mat-icon aria-hidden="false" aria-label="Example home icon">lock</mat-icon></span>
+          <span matPrefix
+            ><mat-icon aria-hidden="false" aria-label="Example home icon"
+              >lock</mat-icon
+            ></span
+          >
           <button
             mat-icon-button
             matSuffix
@@ -45,7 +54,10 @@
         </mat-form-field>
       </p>
       <div class="login-button-container">
-      <button class="login-button" mat-raised-button (click)="onLogin()">LOG IN</button>
-    </div>
+        <button class="login-button" mat-raised-button (click)="onLogin()">
+          LOG IN
+        </button>
+      </div>
     </mat-card>
+  </div>
 </div>
