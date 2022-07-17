@@ -1,3 +1,13 @@
+.products-background {
+  background-image: url(./images/products-background.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
 .example-card {
   max-width: 400px;
 }

@@ -25,6 +25,8 @@
         <mat-form-field class="example-full-width-password" appearance="fill">
           <mat-label>Password</mat-label>
           <input
+            class="password-input-field"
+            #input
             required
             type="password"
             pattern=".{4,}"
@@ -48,6 +50,7 @@
           >
             <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
           </button>
+          <mat-hint align="end">{{ input.value?.length || 0 }}</mat-hint>
           <mat-hint align="start"
             ><strong>Minimum password length: 15</strong>
           </mat-hint>
@@ -57,6 +60,13 @@
         <button class="login-button" mat-raised-button (click)="onLogin()">
           LOG IN
         </button>
+        <button class="register-button" mat-raised-button (click)="onLogin()">
+          SIGN UP
+        </button>
+      </div>
+
+      <div class="footer-login-text">
+        <a class="forgot-password" href="/login"><p>forgot password?</p></a>
       </div>
     </mat-card>
   </div>
