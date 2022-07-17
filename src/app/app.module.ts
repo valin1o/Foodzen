@@ -23,6 +23,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { ProductComponent } from './product/product.component';
 import { MatCardModule } from '@angular/material/card';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MatCardModule } from '@angular/material/card';
     NavBarComponent,
     ProductComponent,
     routingComponent,
+    ShoppingCartComponent,
   ],
   imports: [
     BrowserModule,
