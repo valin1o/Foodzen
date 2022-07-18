@@ -6,6 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+
+  // public date = new Date();
+
+  // public person = {
+  //   "firstName": "Dana",
+  //   "lastName": "Popescu"
+
+  // }
+
   title: string = 'Home title';
   buttonDisable: boolean = false;
   color: string = 'green';
