@@ -35,5 +35,12 @@
   background-repeat: no-repeat;
   background-color: #fff;
   background-position: center;
-  color: transparent
+  color: transparent;
+  transition: all 0.2s;
+}
+
+.cart-button:active {
+  background-image: url(./images/cart-icon.png);
+  background-color: #3f51b5;
+  transform: translateY(1px);
 }
