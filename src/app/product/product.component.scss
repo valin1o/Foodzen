@@ -31,6 +31,9 @@
 }
 
 .cart-button:hover {
+  background-image: url(./images/cart-icon.png);
+  background-repeat: no-repeat;
   background-color: #fff;
-  color: #3f51b5;
+  background-position: center;
+  color: transparent
 }
