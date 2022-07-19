@@ -3,10 +3,20 @@
     mat-icon-button
     class="example-icon"
     aria-label="Example icon-button with menu icon"
-  >
-  </button>
+  ></button>
   <button class="navbar-home-button" mat-button routerLink="/home">Home</button>
   <span class="example-spacer"></span>
-  <button class="navbar-products-button" mat-button routerLink="/products">Products</button>
-  <button class="navbar-cart-button" mat-button routerLink="/cart">Shopping Cart</button>
+  <button class="navbar-products-button" mat-button routerLink="/products">
+    Products
+  </button>
+  <button
+    class="navbar-cart-button"
+    mat-button
+    routerLink="/cart"
+    matBadge="3"
+    matBadgePosition="after"
+    matBadgeColor="accent"
+  >
+    Shopping Cart
+  </button>
 </mat-toolbar>

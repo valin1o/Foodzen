@@ -24,6 +24,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { ProductComponent } from './product/product.component';
 import { MatCardModule } from '@angular/material/card';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { MatBadgeModule } from '@angular/material/badge';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     MatToolbarModule, //navbar
     MatIconModule, //icons
     MatCardModule,
+    MatBadgeModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
