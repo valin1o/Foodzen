@@ -1,67 +1,72 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../product/product.component';
-@Injectable({ providedIn: 'root' })
+import { Product } from '../models/product';
+
+@Injectable({
+  providedIn: 'root',
+})
 export class ProductService {
   products: Product[] = [
-    {
-      id: 0,
-      title: 'sarmale',
-      description: 'Descriere pentru sarmale',
-      price: 30,
-      condiments: 'condimente sarmale',
-    },
-    {
-      id: 1,
-      title: 'mamaliga',
-      description: 'Descriere pentru mamaliga',
-      price: 20,
-      condiments: 'condimente mamaliga',
-    },
-    {
-      id: 2,
-      title: 'branza',
-      description: 'Descriere pentru branza',
-      price: 70.02,
-      condiments: 'condimente branza',
-    },
-    {
-      id: 3,
-      title: 'mici',
-      description: 'Descriere pentru branza',
-      price: 20.4,
-      condiments: 'condimente branza',
-    },
-    {
-      id: 4,
-      title: 'mustar',
-      description: 'Descriere pentru mustar',
-      price: 10.2,
-      condiments: 'condimente mustar',
-    },
-    {
-      id: 5,
-      title: 'carnati',
-      description: 'Descriere pentru carnati',
-      price: 30,
-      condiments: 'condimente carnati',
-    },
-    {
-      id: 6,
-      title: 'legume',
-      description: 'Descriere pentru legume',
-      price: 20,
-      condiments: 'condimente legume',
-    },
-    {
-      id: 7,
-      title: 'sos',
-      description: 'Descriere pentru sos',
-      price: 10,
-      condiments: 'condimente sos',
-    },
+    new Product(
+      1,
+      'product 1',
+      'this is product 1',
+      100,
+      'condiments product 1'
+    ),
+    new Product(
+      2,
+      'product 2',
+      'this is product 2',
+      150,
+      'condiments product 2'
+    ),
+    new Product(
+      3,
+      'product 3',
+      'this is product 3',
+      200,
+      'condiments product 3'
+    ),
+    new Product(
+      4,
+      'product 4',
+      'this is product 4',
+      300,
+      'condiments product 4'
+    ),
+    new Product(
+      5,
+      'product 5',
+      'this is product 5',
+      100,
+      'condiments product 5'
+    ),
+    new Product(
+      6,
+      'product 6',
+      'this is product 6',
+      600,
+      'condiments product 6'
+    ),
+    new Product(
+      7,
+      'product 7',
+      'this is product 7',
+      200,
+      'condiments product 7'
+    ),
+    new Product(
+      8,
+      'product 8',
+      'this is product 8',
+      800,
+      'condiments product 8'
+    ),
   ];
 
-  getProducts() {
+  constructor() {}
+
+  getProducts(): Product[] {
     return this.products;
   }
 }

@@ -1,0 +1,13 @@
+<div class="shopping-cart-background">
+  <app-nav-bar></app-nav-bar>
+  <div *ngIf="cartItems.length === 0">
+    <h1>No items in cart</h1>
+  </div>
+
+  <div *ngIf="cartItems.length > 0" class="shopping-cart-menu">
+    <div class="product-in-cart" *ngFor="let item of cartItems">
+      <app-cart-item [cartItem]="item"></app-cart-item>
+    </div>
+  </div>
+  <strong><h2>Total:</h2><h3>{{cartTotal | currency:'RON'}}</h3></strong>
+</div>

@@ -21,20 +21,24 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { MatIconModule } from '@angular/material/icon';
-import { ProductComponent } from './product/product.component';
 import { MatCardModule } from '@angular/material/card';
-import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductListComponent } from './product-list/product-list.component';
+import { CartComponent } from './cart/cart.component';
+import { CartItemComponent } from './cart/cart-item/cart-item.component';
+import { ProductItemComponent } from './product-list/product-item/product-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NavBarComponent,
-    ProductComponent,
     routingComponent,
-    ShoppingCartComponent,
+    ProductListComponent,
+    CartComponent,
+    CartItemComponent,
+    ProductItemComponent,
   ],
   imports: [
     BrowserModule,
