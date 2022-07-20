@@ -24,10 +24,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatBadgeModule } from '@angular/material/badge';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductListComponent } from './product-list/product-list.component';
-import { CartComponent } from './cart/cart.component';
-import { CartItemComponent } from './cart/cart-item/cart-item.component';
-import { ProductItemComponent } from './product-list/product-item/product-item.component';
 
 @NgModule({
   declarations: [
@@ -35,10 +31,6 @@ import { ProductItemComponent } from './product-list/product-item/product-item.c
     LoginComponent,
     NavBarComponent,
     routingComponent,
-    ProductListComponent,
-    CartComponent,
-    CartItemComponent,
-    ProductItemComponent,
   ],
   imports: [
     BrowserModule,
