@@ -103,8 +103,7 @@
       </mat-card>
     </div>
   </div>
-
-  <div class="checkout-section">
+  <div class="checkout-section" *ngIf="items.length > 0">
     <mat-card class="checkout-card">
       <mat-card-title>Checkout</mat-card-title>
       <mat-card-content>Shipping: RON 15</mat-card-content>
