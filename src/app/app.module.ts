@@ -23,8 +23,7 @@ import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './product/product.component';
 import { CartComponent } from './cart/cart.component';
 
-import {MatBadgeModule} from '@angular/material/badge';
-
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -35,7 +34,7 @@ import {MatBadgeModule} from '@angular/material/badge';
     PageNotFoundComponent,
     ProductsComponent,
     ProductComponent,
-    CartComponent
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,9 +48,9 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatIconModule,
     MatCardModule,
     MatToolbarModule,
-    MatBadgeModule
+    MatBadgeModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

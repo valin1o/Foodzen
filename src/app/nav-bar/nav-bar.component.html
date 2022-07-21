@@ -1,23 +1,22 @@
 <mat-toolbar color="primary">
-    <button
-      mat-icon-button
-      class="example-icon"
-      aria-label="Example icon-button with menu icon"
-    ></button>
-    <button class="navbar-home-button" mat-button routerLink="/home">Home</button>
-    <span class="example-spacer"></span>
-    <button class="navbar-products-button" mat-button routerLink="/products">
-      Products
-    </button>
-    <button
-      class="navbar-cart-button"
-      mat-button
-      routerLink="/cart"
-      matBadge={{itemInCart}}
-      matBadgePosition="after"
-      matBadgeColor="accent"
-    >
-      Shopping Cart
-    </button>
-  </mat-toolbar>
-  
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  ></button>
+  <button class="navbar-home-button" mat-button routerLink="/home">Home</button>
+  <span class="example-spacer"></span>
+  <button class="navbar-products-button" mat-button routerLink="/products">
+    Products
+  </button>
+  <button
+    class="navbar-cart-button"
+    mat-button
+    routerLink="/cart"
+    matBadge="{{ itemInCart }}"
+    matBadgePosition="after"
+    matBadgeColor="accent"
+  >
+    Shopping Cart
+  </button>
+</mat-toolbar>

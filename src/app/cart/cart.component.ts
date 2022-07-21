@@ -18,7 +18,7 @@ export class CartComponent implements OnInit {
     this.cartService.cartItems.subscribe((data) => {
       this.items = data;
 
-      if(this.items) this.getTotal(this.items);
+      if (this.items) this.getTotal(this.items);
     });
   }
 
@@ -56,7 +56,5 @@ export class CartComponent implements OnInit {
     }
   }
 
-  onCheckout(){
-    
-  }
+  onCheckout() {}
 }

@@ -1,74 +1,73 @@
 <div class="login-background">
-    <div class="container">
-      <mat-card class="login-card">
-        <p>
-          <mat-form-field class="example-full-width-email" appearance="fill">
-            <mat-label>E-Mail</mat-label>
-            <input
-              type="email"
-              matInput
-              placeholder="test@example.com"
-              [formControl]="email"
-              required
-              [(ngModel)]="UserInputEmail"
-            />
-            <span matPrefix
-              ><mat-icon aria-hidden="false" aria-label="Example home icon"
-                >mail</mat-icon
-              ></span
-            >
-            <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
-          </mat-form-field>
-        </p>
-  
-        <p>
-          <mat-form-field class="example-full-width-password" appearance="fill">
-            <mat-label>Password</mat-label>
-            <input
-              class="password-input-field"
-              #input
-              required
-              type="password"
-              pattern=".{4,}"
-              ngModel
-              minlength="4"
-              matInput
-              [type]="hide ? 'password' : 'text'"
-              [(ngModel)]="UserInputPassword"
-            />
-            <span matPrefix
-              ><mat-icon aria-hidden="false" aria-label="Example home icon"
-                >lock</mat-icon
-              ></span
-            >
-            <button
-              mat-icon-button
-              matSuffix
-              (click)="hide = !hide"
-              [attr.aria-label]="'Hide password'"
-              [attr.aria-pressed]="hide"
-            >
-              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-            </button>
-            <mat-hint align="end">{{ input.value?.length || 0 }}</mat-hint>
-            <mat-hint align="start"
-              ><strong>Minimum password length: 15</strong>
-            </mat-hint>
-          </mat-form-field>
-        </p>
-        <div class="login-button-container">
-          <button class="login-button" mat-raised-button (click)="onLogin()">
-            LOG IN
+  <div class="container">
+    <mat-card class="login-card">
+      <p>
+        <mat-form-field class="example-full-width-email" appearance="fill">
+          <mat-label>E-Mail</mat-label>
+          <input
+            type="email"
+            matInput
+            placeholder="test@example.com"
+            [formControl]="email"
+            required
+            [(ngModel)]="UserInputEmail"
+          />
+          <span matPrefix
+            ><mat-icon aria-hidden="false" aria-label="Example home icon"
+              >mail</mat-icon
+            ></span
+          >
+          <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field class="example-full-width-password" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input
+            class="password-input-field"
+            #input
+            required
+            type="password"
+            pattern=".{4,}"
+            ngModel
+            minlength="4"
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            [(ngModel)]="UserInputPassword"
+          />
+          <span matPrefix
+            ><mat-icon aria-hidden="false" aria-label="Example home icon"
+              >lock</mat-icon
+            ></span
+          >
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
           </button>
-          <button class="register-button" mat-raised-button (click)="onLogin()">
-            SIGN UP
-          </button>
-        </div>
-  
-        <div class="footer-login-text">
-          <a class="forgot-password" href="/login"><p>forgot password?</p></a>
-        </div>
-      </mat-card>
-    </div>
+          <mat-hint align="end">{{ input.value?.length || 0 }}</mat-hint>
+          <mat-hint align="start"
+            ><strong>Minimum password length: 15</strong>
+          </mat-hint>
+        </mat-form-field>
+      </p>
+      <div class="login-button-container">
+        <button class="login-button" mat-raised-button (click)="onLogin()">
+          LOG IN
+        </button>
+        <button class="register-button" mat-raised-button (click)="onLogin()">
+          SIGN UP
+        </button>
+      </div>
+
+      <div class="footer-login-text">
+        <a class="forgot-password" href="/login"><p>forgot password?</p></a>
+      </div>
+    </mat-card>
   </div>
-  
+</div>

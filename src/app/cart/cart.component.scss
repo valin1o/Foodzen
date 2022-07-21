@@ -1,22 +1,21 @@
-.empty{
-    height:70vh;
-    display: grid;
-    justify-content:center;
-    align-items:center;
-    text-align: center;
+.empty {
+  height: 70vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.checkout{
-    flex-basis: 100%;
-    display:grid;
-    justify-content:end;
-    grid-template-columns: repeat(2,8rem);
-    gap: 1rem;
-    margin-top: 1rem;
-    padding: .5rem;
+.checkout {
+  flex-basis: 100%;
+  display: grid;
+  justify-content: end;
+  grid-template-columns: repeat(2, 8rem);
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
 }
 
-b{
-    justify-self: end;
+b {
+  justify-self: end;
 }
-

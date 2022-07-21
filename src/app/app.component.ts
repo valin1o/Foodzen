@@ -7,10 +7,8 @@ import { CartService } from './cart.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  itemInCart:number;
+  itemInCart: number;
   constructor(private cartService: CartService) {}
 
-  ngOnInit() {
-  
-  }
+  ngOnInit() {}
 }
