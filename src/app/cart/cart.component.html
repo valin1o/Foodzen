@@ -1,0 +1,59 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="shopping-cart-background">
+  <div class="empty" *ngIf="items.length === 0">
+    <div class="info">
+      <h4>No items in cart.</h4>
+      <a routerLink="/products">Start shopping</a>
+    </div>
+  </div>
+
+  <div class="shopping-cart-menu" *ngIf="items.length > 0">
+    <div class="product-in-cart" *ngFor="let item of items; let i = index">
+      <mat-card class="example-card">
+        <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+        <mat-card-title>{{ item.name }}</mat-card-title>
+        <mat-card-content>
+          <p>{{ item.desc }}</p>
+        </mat-card-content>
+        <mat-card-content>
+          <p>{{ item.price }}</p>
+        </mat-card-content>
+        <input
+          type="number"
+          class="qty"
+          [value]="item.qty"
+          (blur)="validateInput($event, i)"
+        />
+        <div class="subtotal">
+          {{ item.price * item.qty | currency: "ron" }}
+        </div>
+
+        <mat-card-actions align="end">
+          <button mat-button>
+            <span matPrefix
+              ><mat-icon
+                class="cart-delete-icon"
+                aria-hidden="false"
+                (click)="onDelete(i)"
+                aria-label="Example delete icon"
+                >delete</mat-icon
+              ></span
+            >
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <div class="checkout">
+      <div>Subtotal</div>
+      <b>$0</b>
+      <div>Shipping</div>
+      <b>$0</b>
+      <div>Total:</div>
+      <b>{{ total | currency }}</b>
+
+      <button class="checkout" (click)="onCheckout()">Checkout</button>
+    </div>
+  </div>
+</div>
