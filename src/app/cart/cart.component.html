@@ -11,8 +11,11 @@
   <div class="shopping-cart-menu" *ngIf="items.length > 0">
     <div class="product-in-cart" *ngFor="let item of items; let i = index">
       <mat-card class="example-card">
-        <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
-        <mat-card-title>{{ item.name }}</mat-card-title>
+        <a [routerLink]="['/products', item.id]" class="product-title-link">
+          <mat-card-title class="product-title"
+            ><p style="font-size: 40px; margin-left: -30px">{{ item.name }}</p>
+          </mat-card-title>
+        </a>
         <mat-card-content>
           <p>{{ item.desc }}</p>
         </mat-card-content>
