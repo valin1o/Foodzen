@@ -1,6 +1,6 @@
-<app-nav-bar></app-nav-bar>
-
 <div class="shopping-cart-background">
+  <app-nav-bar></app-nav-bar>
+
   <div class="empty" *ngIf="items.length === 0">
     <div class="info">
       <h4>No items in cart.</h4>
@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <div class="shopping-cart-menu" *ngIf="items.length > 0">
+  <!-- <div class="shopping-cart-menu" *ngIf="items.length > 0">
     <div class="product-in-cart" *ngFor="let item of items; let i = index">
       <mat-card class="example-card">
         <a [routerLink]="['/products', item.id]" class="product-title-link">
@@ -33,7 +33,7 @@
         </div>
 
         <mat-card-actions align="end">
-          <button mat-button>
+          <button mat-button class="cart-delete-button">
             <span matPrefix
               ><mat-icon
                 class="cart-delete-icon"
@@ -58,5 +58,71 @@
 
       <button class="checkout" (click)="onCheckout()">Checkout</button>
     </div>
+  </div> -->
+  <div class="shopping-cart-menu" *ngIf="items.length > 0">
+    <div class="product-in-cart" *ngFor="let item of items; let i = index">
+      <mat-card class="product-card">
+        <a [routerLink]="['/products', item.id]" class="product-title-link">
+          <mat-card-title
+            ><p>{{ item.name }}</p>
+          </mat-card-title>
+        </a>
+        <mat-card-content>
+          <p>{{ item.desc }}</p>
+        </mat-card-content>
+        <mat-card-content>
+          <p>{{ item.price | currency: "RON " }}</p>
+        </mat-card-content>
+        <mat-card-content>
+          <p>
+            <strong>Subtotal</strong>:
+            {{ item.price * item.qty | currency: "RON " }}
+          </p>
+        </mat-card-content>
+
+        <input
+          type="number"
+          class="qty"
+          [value]="item.qty"
+          (blur)="validateInput($event, i)"
+          matInput
+          placeholder="quantity"
+        />
+
+        <button mat-button class="cart-delete-button">
+          <span matPrefix
+            ><mat-icon
+              class="cart-delete-icon"
+              aria-hidden="false"
+              (click)="onDelete(i)"
+              aria-label="Example delete icon"
+              >delete</mat-icon
+            ></span
+          >
+        </button>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="checkout-section">
+    <mat-card class="checkout-card">
+      <mat-card-title>Checkout</mat-card-title>
+      <mat-card-content>Shipping: RON 15</mat-card-content>
+      <mat-card-content
+        >Subtotal: {{ total | currency: "RON " }}</mat-card-content
+      >
+      <mat-divider></mat-divider>
+      <br />
+      <mat-card-content>
+        <p>
+          TOTAL: <strong>{{ total + 15 | currency: "RON " }}</strong>
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="checkout-button" (click)="onCheckout()" mat-button>
+          CHECKOUT
+        </button>
+      </mat-card-actions>
+    </mat-card>
   </div>
 </div>
