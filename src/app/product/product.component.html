@@ -1,22 +1,32 @@
 <app-nav-bar></app-nav-bar>
-
-<mat-card class="example-card">
-  <a [routerLink]="['/products', product.id]"
-    ><mat-card-title>{{ product.name }}</mat-card-title></a
-  >
-  <mat-card-content>
-    <p>{{ product.desc }}</p>
-  </mat-card-content>
-  <div class="images" *ngFor="let image of product.imgUrls">
-    <img mat-card-image [src]="image" />
+<div class="products-background">
+  <div class="product-page">
+    <mat-card class="product-card">
+      <mat-card-title-group>
+        <div class="product-title-and-qty">
+          <mat-card-title>{{ product.name }}</mat-card-title>
+          <br />
+          <mat-card-subtitle>qty: {{ product.qty }}</mat-card-subtitle>
+        </div>
+        <div class="images" *ngFor="let image of product.imgUrls">
+          <img class="image" mat-card-image [src]="image" />
+        </div>
+      </mat-card-title-group>
+      <mat-card-content>
+        <p>{{ product.desc }}</p>
+      </mat-card-content>
+      <mat-card-content>
+        <p>{{ product.price }} RON</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          class="add-to-cart-button"
+          mat-button
+          (click)="addToCart(product)"
+        >
+          ADD TO CART
+        </button>
+      </mat-card-actions>
+    </mat-card>
   </div>
-  <mat-card-subtitle>qty: {{ product.qty }}</mat-card-subtitle>
-  <mat-card-content>
-    <p>{{ product.price }} RON</p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button class="cart-button" (click)="addToCart(product)">
-      ADD TO CART
-    </button>
-  </mat-card-actions>
-</mat-card>
+</div>
