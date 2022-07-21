@@ -15,20 +15,36 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  border: 1px solid #3f51b5;
 }
 
-.signup-title{
-    margin-top: 10px;
+.signup-title {
+  margin-top: 10px;
 }
 
-.signup-email{
-    width: 260px;
+.signup-email {
+  width: 260px;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    height: 91vh;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: column;
+  height: 91vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-name {
+  width: 260px;
+}
+
+.signup-button {
+  background-color: #3f51b5;
+  color: #fff;
+  width: 160px;
+}
+
+.signup-button:hover{
+    background-color: #fff;
+    color: #3f51b5;
+}

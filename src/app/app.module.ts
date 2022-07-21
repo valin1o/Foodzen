@@ -28,6 +28,8 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDividerModule } from '@angular/material/divider';
 import { SignupComponent } from './signup/signup.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 @NgModule({
   declarations: [
@@ -56,6 +58,7 @@ import { SignupComponent } from './signup/signup.component';
     MatBadgeModule,
     MatTooltipModule,
     MatDividerModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent],

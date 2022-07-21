@@ -3,9 +3,14 @@
     <mat-card class="signup-card">
       <mat-card-title class="signup-title">SIGNUP</mat-card-title>
       <mat-card-content>
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="signup-name">
           <mat-label>Name</mat-label>
-          <input matInput required [(ngModel)]="UserInputName" minlength="2"/>
+          <input matInput required [(ngModel)]="UserInputName" minlength="2" />
+          <span matPrefix
+            ><mat-icon aria-hidden="false" aria-label="Example person_pin icon"
+              >person_pin</mat-icon
+            ></span
+          >
         </mat-form-field>
         <mat-form-field class="signup-email" appearance="fill">
           <mat-label>E-Mail</mat-label>
@@ -57,9 +62,20 @@
             ><strong>Minimum password length: 15</strong>
           </mat-hint>
         </mat-form-field>
+        <!-- <br /><br />
+        <mat-card-content
+          ><mat-checkbox class="example-margin" required
+            >Am citit si inteles termenii si conditiile.</mat-checkbox
+          ></mat-card-content
+        > -->
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button mat-raised-button (click)="onSignup()">
+        <button
+          class="signup-button"
+          mat-button
+          mat-raised-button
+          (click)="onSignup()"
+        >
           SIGN UP
         </button>
       </mat-card-actions>
