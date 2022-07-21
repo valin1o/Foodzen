@@ -1,0 +1,68 @@
+<div class="signup-background">
+  <div class="container">
+    <mat-card class="signup-card">
+      <mat-card-title class="signup-title">SIGNUP</mat-card-title>
+      <mat-card-content>
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput required [(ngModel)]="UserInputName" minlength="2"/>
+        </mat-form-field>
+        <mat-form-field class="signup-email" appearance="fill">
+          <mat-label>E-Mail</mat-label>
+          <input
+            type="email"
+            matInput
+            placeholder="test@example.com"
+            [formControl]="email"
+            required
+            [(ngModel)]="UserInputEmail"
+          />
+          <span matPrefix
+            ><mat-icon aria-hidden="false" aria-label="Example home icon"
+              >mail</mat-icon
+            ></span
+          >
+          <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width-password" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input
+            class="password-input-field"
+            #input
+            required
+            type="password"
+            pattern=".{4,}"
+            ngModel
+            minlength="4"
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            [(ngModel)]="UserInputPassword"
+          />
+          <span matPrefix
+            ><mat-icon aria-hidden="false" aria-label="Example home icon"
+              >lock</mat-icon
+            ></span
+          >
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+          <mat-hint align="end">{{ input.value?.length || 0 }}</mat-hint>
+          <mat-hint align="start"
+            ><strong>Minimum password length: 15</strong>
+          </mat-hint>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button mat-raised-button (click)="onSignup()">
+          SIGN UP
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

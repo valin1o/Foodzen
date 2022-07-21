@@ -36,4 +36,8 @@ export class LoginComponent implements OnInit {
       alert('Wrong log-in credentials');
     }
   }
+
+  onSignup(){
+    this.route.navigateByUrl('signup')
+  }
 }

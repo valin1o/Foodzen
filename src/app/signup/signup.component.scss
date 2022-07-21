@@ -1,0 +1,34 @@
+.signup-background {
+  background-image: url(./images/signup-background.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.signup-card {
+  max-width: 400px;
+  height: 500px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.signup-title{
+    margin-top: 10px;
+}
+
+.signup-email{
+    width: 260px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 91vh;
+    justify-content: center;
+    align-items: center;
+  }

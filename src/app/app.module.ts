@@ -25,10 +25,9 @@ import { CartComponent } from './cart/cart.component';
 
 import { MatBadgeModule } from '@angular/material/badge';
 
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatDividerModule} from '@angular/material/divider';
-
-
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDividerModule } from '@angular/material/divider';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +39,7 @@ import {MatDividerModule} from '@angular/material/divider';
     ProductsComponent,
     ProductComponent,
     CartComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +55,7 @@ import {MatDividerModule} from '@angular/material/divider';
     MatToolbarModule,
     MatBadgeModule,
     MatTooltipModule,
-    MatDividerModule
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
