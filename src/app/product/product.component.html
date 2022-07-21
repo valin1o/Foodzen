@@ -16,7 +16,7 @@
         <p>{{ product.desc }}</p>
       </mat-card-content>
       <mat-card-content>
-        <p>{{ product.price }} RON</p>
+        <p>{{ product.price | currency: "RON " }}</p>
       </mat-card-content>
       <mat-card-actions>
         <button

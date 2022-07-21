@@ -4,10 +4,29 @@
     class="example-icon"
     aria-label="Example icon-button with menu icon"
   ></button>
-  <button class="navbar-home-button" mat-button routerLink="/home">Home</button>
+  <button
+    class="navbar-home-button"
+    mat-button
+    routerLink="/home"
+    matTooltip="Home"
+  >
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"
+      >home</mat-icon
+    >
+  </button>
   <span class="example-spacer"></span>
-  <button class="navbar-products-button" mat-button routerLink="/products">
-    Products
+  <button
+    class="navbar-products-button"
+    mat-button
+    routerLink="/products"
+    matTooltip="Products"
+  >
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Example fastfood icon"
+      fontIcon="fastfood"
+      >fastfood</mat-icon
+    >
   </button>
   <button
     class="navbar-cart-button"
@@ -15,8 +34,14 @@
     routerLink="/cart"
     matBadge="{{ itemInCart }}"
     matBadgePosition="after"
-    matBadgeColor="accent"
+    matBadgeColor="primary"
+    matTooltip="Your shopping cart"
   >
-    Shopping Cart
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Example shopping_cart icon"
+      fontIcon="shopping_cart"
+      >shopping_cart</mat-icon
+    >
   </button>
 </mat-toolbar>

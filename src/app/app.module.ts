@@ -25,6 +25,9 @@ import { CartComponent } from './cart/cart.component';
 
 import { MatBadgeModule } from '@angular/material/badge';
 
+import {MatTooltipModule} from '@angular/material/tooltip';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +52,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatCardModule,
     MatToolbarModule,
     MatBadgeModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent],
