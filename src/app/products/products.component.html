@@ -16,9 +16,10 @@
         <img
           class="product-image"
           mat-card-image
-          src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-          alt=""
+          [src]="product.frontImage"
+          alt="front image"
         />
+        
         <mat-card-content>
           <p class="product-description">
             {{ product.desc }}
