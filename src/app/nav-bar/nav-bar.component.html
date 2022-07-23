@@ -1,10 +1,5 @@
 <mat-toolbar color="primary">
   <button
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with menu icon"
-  ></button>
-  <button
     class="navbar-home-button"
     mat-button
     routerLink="/home"
@@ -14,8 +9,42 @@
       >home</mat-icon
     >
   </button>
-  <span><img class="toolbar-logo" src="assets/toolbar-logo.png"></span>
-  <span class="example-spacer"></span>
+  <span><img class="toolbar-logo" src="assets/toolbar-logo.png" /></span>
+  <span class="example-spacer">
+    <div class="navbar-categories">
+      <button
+        class="category 1"
+        mat-button
+        routerLink="/home"
+        matTooltip="Every drink available"
+      >
+      <mat-icon aria-hidden="false" aria-label="Example local_bar icon" fontIcon="local_bar"
+      >local_bar</mat-icon
+    > Drinks
+      </button>
+      <button
+        class="category 2"
+        mat-button
+        routerLink="/home"
+        matTooltip="Find your local restaurants"
+      ><mat-icon aria-hidden="false" aria-label="Example store_mall_directory icon" fontIcon="store_mall_directory"
+      >store_mall_directory</mat-icon
+    >
+         Restaurants
+      </button>
+      <button
+        class="category 3"
+        mat-button
+        routerLink="/home"
+        matTooltip="All the reviews"
+      ><mat-icon aria-hidden="false" aria-label="Example star_half icon" fontIcon="star_half"
+      >star_half</mat-icon
+    >
+         Reviews
+      </button>
+    </div>
+  </span>
+
   <button
     class="navbar-products-button"
     mat-button
