@@ -1,41 +1,66 @@
 <div class="home-background">
   <app-nav-bar></app-nav-bar>
-
-  <!-- <p [style.color]="color">{{ title }}</p>
-
-  <button mat-button type="submit" [disabled]="buttonDisable">Test</button>
-  <button mat-button type="submit" (click)="changeButton()">Update Button</button>
-
-  <p>
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>E-Mail</mat-label>
-      <input
-        required
-        type="email"
-        matInput
-        placeholder="test@example.com"
-        value=""
-        [(ngModel)]="newTitle"
-      />
-    </mat-form-field>
-    <button
-      mat-button
-      type="submit"
-      [disabled]="buttonDisable"
-      (click)="changeTitle()"
-    >
-      {{ newTitle }}
-    </button>
-  </p> -->
-  <!-- 
-  <h2>{{person | json}}</h2>
-
-  <h2>{{date}}</h2>
-
-  <h2>{{date | date:'short'}}</h2>
-
-  <h2>{{date | date:'medium'}}</h2>
-
-  <h2>{{date | date:"yyyy-MM-dd HH:mm"}}</h2>
- -->
 </div>
+<div class="fade-bottom"></div>
+<div class="home-content-title-description">
+  <h1 class="title-description">
+    We at Foodzen offer cuisine to suit your daily tastes.<br />
+  </h1>
+  <div class="row">
+    <div class="column">
+      <div class="block">
+        <p>
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example shopping_basket icon"
+            >shopping_basket</mat-icon
+          >
+        </p>
+        <h3>7,000+</h3>
+        <p>Products</p>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="block">
+        <p>
+          <mat-icon aria-hidden="false" aria-label="Example store icon"
+            >store</mat-icon
+          >
+        </p>
+        <h3>300+</h3>
+        <p>Restaurants</p>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="block">
+        <p>
+          <mat-icon aria-hidden="false" aria-label="Example local_shipping icon"
+            >local_shipping</mat-icon
+          >
+        </p>
+        <h3>20,000+</h3>
+        <p>Orders</p>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="block">
+        <p>
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example insert_emoticon icon"
+            >insert_emoticon</mat-icon
+          >
+        </p>
+        <h3>35,000+</h3>
+        <p>Happy customers</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="fade-bottom"></div>
+<div class="home-background_2"></div>
+<div class="fade-top fade-bottom"></div>
+<app-footer></app-footer>

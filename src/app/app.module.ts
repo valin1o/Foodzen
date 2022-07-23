@@ -32,6 +32,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { MatStepperModule } from '@angular/material/stepper';
 import { CdkStepperModule } from '@angular/cdk/stepper';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
     CartComponent,
     SignupComponent,
     CheckoutComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
