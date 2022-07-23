@@ -10,6 +10,14 @@
   width: 100%;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 84vh;
+  justify-content: center;
+  align-items: center;
+}
+
 .home-background_2 {
   background-image: url(./images/home-background_2.jpg);
   -webkit-background-size: cover;
@@ -105,4 +113,62 @@
   font-family: "Oswald", sans-serif;
   font-weight: 300px;
   font-size: 30px;
+}
+
+.post-card {
+  max-width: 1200px;
+  background-color: rgb(48, 84, 48);
+}
+
+.post-image {
+  padding: 10px;
+}
+
+.post-content {
+  color: #fff;
+}
+
+.post-title {
+  color: #fff;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+.container-2 {
+  display: flex;
+  flex-direction: column;
+  height: 99vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: 30px;
+  padding: 200px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.restaurant1-card {
+  max-width: 400px;
+  margin-right: 20px;
+}
+
+.restaurant2-card {
+  max-width: 400px;
+  height: 500px;
+}
+
+.restaurant3-card {
+  max-width: 400px;
+  margin-left: 20px;
+}
+
+.restaurant1-image {
+  padding: 5px;
+}
+
+.restaurant3-image {
+  padding: 5px;
 }

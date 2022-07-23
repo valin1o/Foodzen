@@ -33,6 +33,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { MatStepperModule } from '@angular/material/stepper';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { FooterComponent } from './footer/footer.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { FooterComponent } from './footer/footer.component';
     MatCheckboxModule,
     MatStepperModule,
     CdkStepperModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
