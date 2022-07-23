@@ -28,8 +28,10 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDividerModule } from '@angular/material/divider';
 import { SignupComponent } from './signup/signup.component';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { MatStepperModule } from '@angular/material/stepper';
+import { CdkStepperModule } from '@angular/cdk/stepper';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ProductComponent,
     CartComponent,
     SignupComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatBadgeModule,
     MatTooltipModule,
     MatDividerModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatStepperModule,
+    CdkStepperModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -8,57 +8,6 @@
     </div>
   </div>
 
-  <!-- <div class="shopping-cart-menu" *ngIf="items.length > 0">
-    <div class="product-in-cart" *ngFor="let item of items; let i = index">
-      <mat-card class="example-card">
-        <a [routerLink]="['/products', item.id]" class="product-title-link">
-          <mat-card-title class="product-title"
-            ><p style="font-size: 40px; margin-left: -30px">{{ item.name }}</p>
-          </mat-card-title>
-        </a>
-        <mat-card-content>
-          <p>{{ item.desc }}</p>
-        </mat-card-content>
-        <mat-card-content>
-          <p>{{ item.price }}</p>
-        </mat-card-content>
-        <input
-          type="number"
-          class="qty"
-          [value]="item.qty"
-          (blur)="validateInput($event, i)"
-        />
-        <div class="subtotal">
-          {{ item.price * item.qty | currency: "ron" }}
-        </div>
-
-        <mat-card-actions align="end">
-          <button mat-button class="cart-delete-button">
-            <span matPrefix
-              ><mat-icon
-                class="cart-delete-icon"
-                aria-hidden="false"
-                (click)="onDelete(i)"
-                aria-label="Example delete icon"
-                >delete</mat-icon
-              ></span
-            >
-          </button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-
-    <div class="checkout">
-      <div>Subtotal</div>
-      <b>$0</b>
-      <div>Shipping</div>
-      <b>$0</b>
-      <div>Total:</div>
-      <b>{{ total | currency }}</b>
-
-      <button class="checkout" (click)="onCheckout()">Checkout</button>
-    </div>
-  </div> -->
   <div class="shopping-cart-menu" *ngIf="items.length > 0">
     <div class="product-in-cart" *ngFor="let item of items; let i = index">
       <mat-card class="product-card">
@@ -117,7 +66,7 @@
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <button class="checkout-button" (click)="onCheckout()" mat-button>
+        <button class="checkout-button" routerLink="/checkout" (click)="onCheckout()" mat-button>
           CHECKOUT
         </button>
       </mat-card-actions>
