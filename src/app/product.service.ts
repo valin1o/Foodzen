@@ -17,7 +17,7 @@ export class ProductService {
         'assets/meniul-zilei1_2.jpg',
         'assets/meniul-zilei1_3.jpg',
       ],
-      'assets/meniul-zilei1'
+      'assets/meniul-zilei1.jpg'
     ),
     new Product(
       2,
@@ -30,7 +30,7 @@ export class ProductService {
         'assets/meniul-zilei2_2.jpg',
         'assets/meniul-zilei2_3.jpg',
       ],
-      'assets/meniul-zilei2'
+      'assets/meniul-zilei2.jpg'
     ),
     new Product(
       3,
@@ -43,10 +43,9 @@ export class ProductService {
         'assets/meniul-zilei3_2.jpg',
         'assets/meniul-zilei3_3.jpg',
       ],
-      'assets/meniul-zilei3'
+      'assets/meniul-zilei3.jpg'
     ),
   ];
-  getFrontImage: any;
 
   constructor() {}
 

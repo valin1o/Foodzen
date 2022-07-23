@@ -37,12 +37,20 @@
 }
 
 .product-image{
-  width: auto;
+  max-width: 310px;
   height: 250px;
   justify-content: center;
   align-items: center;
   background-size: cover;
-  margin: 1px;
+  margin: 0px;
+}
+
+.frontImageDiv{
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-description{

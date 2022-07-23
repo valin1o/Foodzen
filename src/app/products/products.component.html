@@ -9,17 +9,21 @@
             class="product-title-link"
           >
             <mat-card-title class="product-title"
-              ><p style="font-size: 40px; margin-left: -30px;">&#9755; {{ product.name }} </p>
+              ><p style="font-size: 40px; margin-left: -30px">
+                &#9755; {{ product.name }}
+              </p>
             </mat-card-title>
           </a>
         </mat-card-header>
-        <img
-          class="product-image"
-          mat-card-image
-          [src]="product.frontImage"
-          alt="front image"
-        />
-        
+        <div class="frontImageDiv">
+          <img
+            class="product-image"
+            mat-card-image
+            [src]="product.frontImage"
+            alt="frontImage"
+          />
+        </div>
+
         <mat-card-content>
           <p class="product-description">
             {{ product.desc }}
