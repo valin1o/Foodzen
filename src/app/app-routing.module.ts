@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ProductComponent } from './product/product.component';
 import { ProductsComponent } from './products/products.component';
 import { SignupComponent } from './signup/signup.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -27,4 +28,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule {}
 
-export const routingComponent = [HomeComponent, PageNotFoundComponent];
+export const routingComponent = [HomeComponent, PageNotFoundComponent,MatFormFieldModule ];

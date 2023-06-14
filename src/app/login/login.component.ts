@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { NonNullableFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,27 +9,38 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  loginForm = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required],
+  });
 
-  constructor(private route: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private fb: NonNullableFormBuilder
+  ) {}
 
   ngOnInit(): void {}
 
-  hide = true;
+  get email() {
+    return this.loginForm.get('email');
+  }
 
-  email = new FormControl('', [Validators.required, Validators.email]);
+  get password() {
+    return this.loginForm.get('password');
+  }
 
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a valid E-Mail';
+  submit() {
+    const { email, password } = this.loginForm.value;
+
+    if (!this.loginForm.valid || !email || !password) {
+      return;
     }
 
-    return this.email.hasError('email') ? 'Not a valid E-Mail' : '';
-  }
-
-  onLogin(){
-  }
-
-  onSignup(){
-    this.route.navigateByUrl('signup')
+    this.authService
+      .login(email, password)
+      .subscribe(() => {
+        this.router.navigate(['/home']);
+      });
   }
 }

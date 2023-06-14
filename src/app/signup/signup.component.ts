@@ -1,6 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormControl,
+  FormGroup,
+  NonNullableFormBuilder,
+  ValidationErrors,
+  ValidatorFn,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
+import { AuthService } from '../auth.service';
+import { UsersService } from '../users.service';
+
+export function passwordsMatchValidator(): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const password = control.get('password')?.value;
+    const confirmPassword = control.get('confirmPassword')?.value;
+
+    if (password && confirmPassword && password !== confirmPassword) {
+      return { passwordsDontMatch: true };
+    } else {
+      return null;
+    }
+  };
+}
 
 @Component({
   selector: 'app-signup',
@@ -8,37 +32,57 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
-  UserInputPassword: string = '';
-  UserInputEmail: string = '';
-  UserInputName: string = '';
+  signUpForm = this.fb.group(
+    {
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+      confirmPassword: ['', Validators.required],
+    },
+    { validators: passwordsMatchValidator() }
+  );
 
-  constructor(private route: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private usersService: UsersService,
+    private fb: NonNullableFormBuilder
+  ) {}
 
   ngOnInit(): void {}
 
-  hide = true;
-
-  email = new FormControl('', [Validators.required, Validators.email]);
-
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a valid E-Mail';
-    }
-
-    return this.email.hasError('email') ? 'Not a valid E-Mail' : '';
+  get email() {
+    return this.signUpForm.get('email');
   }
 
-  onSignup() {
-    if (
-      this.UserInputEmail.length >= 4 &&
-      !this.email.hasError('required') &&
-      this.UserInputPassword.length >= 4 &&
-      this.UserInputName.length > 1
-    ) {
-      this.route.navigateByUrl('login');
-    } else {
-      this.route.navigateByUrl('signup');
-      alert('Wrong sign-up credentials');
+  get password() {
+    return this.signUpForm.get('password');
+  }
+
+  get confirmPassword() {
+    return this.signUpForm.get('confirmPassword');
+  }
+
+  get name() {
+    return this.signUpForm.get('name');
+  }
+
+  submit() {
+    const { name, email, password } = this.signUpForm.value;
+
+    if (!this.signUpForm.valid || !name || !password || !email) {
+      return;
     }
+
+    this.authService
+      .signUp(email, password)
+      .pipe(
+        switchMap(({ user: { uid } }) =>
+          this.usersService.addUser({ uid, email, displayName: name })
+        ),
+      )
+      .subscribe(() => {
+        this.router.navigate(['/home']);
+      });
   }
 }
