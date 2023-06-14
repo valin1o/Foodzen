@@ -34,6 +34,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { FooterComponent } from './footer/footer.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     SignupComponent,
     CheckoutComponent,
     FooterComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
