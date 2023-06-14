@@ -36,8 +36,8 @@ export class SignupComponent implements OnInit {
     {
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
-      confirmPassword: ['', Validators.required],
+      password: ['', Validators.required,Validators.minLength(6)],
+      confirmPassword: ['', Validators.required,Validators.minLength(6)],
     },
     { validators: passwordsMatchValidator() }
   );
@@ -84,5 +84,11 @@ export class SignupComponent implements OnInit {
       .subscribe(() => {
         this.router.navigate(['/login']);
       });
+
+      alert('REGISTERED')
+  }
+
+  backToLogin(){
+    this.router.navigate(['/login']);
   }
 }
