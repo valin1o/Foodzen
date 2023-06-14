@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,12 @@ export class LoginComponent implements OnInit {
   UserInputPassword: string = '';
   UserInputEmail: string = '';
 
-  constructor(private route: Router) {}
+  loginForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', Validators.required)
+  })
+
+  constructor(private route: Router, private authService: AuthenticationService) {}
 
   ngOnInit(): void {}
 
@@ -28,13 +34,28 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
-    if (this.UserInputEmail === 'admin' && this.UserInputPassword === 'admin') {
-      // alert('Logged in');
-      this.route.navigateByUrl('home');
-    } else {
-      this.route.navigateByUrl('login');
-      alert('Wrong log-in credentials');
+    // if (this.UserInputEmail === 'admin' && this.UserInputPassword === 'admin') {
+    //   // alert('Logged in');
+    //   this.route.navigateByUrl('home');
+    // } else {
+    //   this.route.navigateByUrl('login');
+    //   alert('Wrong log-in credentials');
+    // }
+    
+    this.authService.login(email, password)
+  }
+
+  submit(){
+    if(!this.loginForm.valid){
+      return;
     }
+
+    const{email, password} = this.loginForm.value;
+    this.authService.login(email, password).subscribe(() => {
+        this.route.navigate(['/home']);
+    });
+
+
   }
 
   onSignup(){
