@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -10,12 +9,7 @@ import { AuthenticationService } from '../authentication.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', Validators.required)
-  })
-
-  constructor(private route: Router, private authService: AuthenticationService) {}
+  constructor(private route: Router) {}
 
   ngOnInit(): void {}
 
@@ -31,20 +25,7 @@ export class LoginComponent implements OnInit {
     return this.email.hasError('email') ? 'Not a valid E-Mail' : '';
   }
 
-  onLogin() {
-  }
-
-  submit(){
-    if(!this.loginForm.valid){
-      return;
-    }
-
-    const{email, password} = this.loginForm.value;
-    this.authService.login(email, password).subscribe(() => {
-        this.route.navigate(['/home']);
-    });
-
-
+  onLogin(){
   }
 
   onSignup(){
