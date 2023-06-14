@@ -37,8 +37,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { UsersService } from './users.service';
-import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+
+
 
 @NgModule({
   declarations: [
@@ -55,6 +58,7 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
     FooterComponent,
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -74,13 +78,13 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
     CdkStepperModule,
     MatGridListModule,
     MatIconModule,
+    
 
     provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
   ],
-  providers: [UsersService,{
-    provide: FIREBASE_OPTIONS, useValue: environment.firebase
-  }],
+  providers: [UsersService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
