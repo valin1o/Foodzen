@@ -79,10 +79,10 @@ export class SignupComponent implements OnInit {
       .pipe(
         switchMap(({ user: { uid } }) =>
           this.usersService.addUser({ uid, email, displayName: name })
-        ),
+        )
       )
       .subscribe(() => {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/login']);
       });
   }
 }
