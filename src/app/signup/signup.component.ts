@@ -36,8 +36,8 @@ export class SignupComponent implements OnInit {
     {
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required,Validators.minLength(6)],
-      confirmPassword: ['', Validators.required,Validators.minLength(6)],
+      password: ['', Validators.required],
+      confirmPassword: ['', Validators.required],
     },
     { validators: passwordsMatchValidator() }
   );

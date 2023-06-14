@@ -27,9 +27,6 @@
         <mat-error *ngIf="password?.invalid && password?.errors?.['required']">
           Password is required
         </mat-error>
-        <mat-error *ngIf="password?.invalid && password?.errors?.['minlength']">
-          Password should be at least 6 characters long
-        </mat-error>
       </mat-form-field>
       <mat-form-field class="form-field">
         <input
