@@ -37,6 +37,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { UsersService } from './users.service';
 
 @NgModule({
   declarations: [
@@ -71,10 +72,11 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     CdkStepperModule,
     MatGridListModule,
     MatIconModule,
+
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
