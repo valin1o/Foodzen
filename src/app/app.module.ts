@@ -38,6 +38,7 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { UsersService } from './users.service';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { UsersService } from './users.service';
     FooterComponent,
   ],
   imports: [
+    BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatInputModule,
@@ -76,7 +78,9 @@ import { UsersService } from './users.service';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
   ],
-  providers: [UsersService],
+  providers: [UsersService,{
+    provide: FIREBASE_OPTIONS, useValue: environment.firebase
+  }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
