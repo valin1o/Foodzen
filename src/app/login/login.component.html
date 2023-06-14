@@ -12,7 +12,6 @@
                 [formControl]="email"
                 formControlName="email"
                 required
-                [(ngModel)]="UserInputEmail"
               />
               <span matPrefix
                 ><mat-icon aria-hidden="false" aria-label="Example home icon"
@@ -37,7 +36,6 @@
                 minlength="4"
                 matInput
                 [type]="hide ? 'password' : 'text'"
-                [(ngModel)]="UserInputPassword"
               />
               <span matPrefix
                 ><mat-icon aria-hidden="false" aria-label="Example home icon"

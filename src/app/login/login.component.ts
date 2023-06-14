@@ -9,8 +9,6 @@ import { AuthenticationService } from '../authentication.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  UserInputPassword: string = '';
-  UserInputEmail: string = '';
 
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -34,15 +32,6 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
-    // if (this.UserInputEmail === 'admin' && this.UserInputPassword === 'admin') {
-    //   // alert('Logged in');
-    //   this.route.navigateByUrl('home');
-    // } else {
-    //   this.route.navigateByUrl('login');
-    //   alert('Wrong log-in credentials');
-    // }
-    
-    this.authService.login(email, password)
   }
 
   submit(){
