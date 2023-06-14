@@ -53,7 +53,6 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     FooterComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatInputModule,
@@ -71,6 +70,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     MatStepperModule,
     CdkStepperModule,
     MatGridListModule,
+    MatIconModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
   ],
